@@ -1,0 +1,25 @@
+{
+  "inlayHint.refreshOnInsertMode": true,
+  "pullDiagnostic.workspace": false,
+  "diagnostic.checkCurrentLine": true,
+  "suggest.selection": "recentlyUsed",
+  "coc.preferences.jumpCommand": "tabe",
+  "diagnostic.virtualText": true,
+  "suggest.virtualText": true,
+  "hover.floatConfig": {
+    "border": true,
+    "shadow": true,
+    "rounded": true
+  },
+  "suggest.floatConfig": {
+    "border": true
+  },
+  "diagnostic.floatConfig": {
+    "border": true,
+    "shadow": true,
+    "close": true,
+    "rounded": true
+  },
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.diagnostics.globals": ["vim"]
+}
