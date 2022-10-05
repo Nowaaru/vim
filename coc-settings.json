@@ -25,7 +25,7 @@
   "languageserver": {
     "lua": {
         "command": "lua-language-server",
-        "fileTypes": [".lua"],
+        "filetypes": [".lua"],
         "rootPatterns": [".git"]
     }
   }

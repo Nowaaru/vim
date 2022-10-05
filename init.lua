@@ -450,14 +450,14 @@ local succ, err = pcall(function()
 end)
 
 if (not succ) then
-    -- print([[
--- An error occured when setting up NVim's plugins.
+    print([[
+An error occured when setting up NoireVim's plugins.
 
--- This usually is due to PlugInstall not being called.
--- Please press <SPC>ni to install plugins.
+This usually is due to PlugInstall not being called.
+Please press <SPC>ni to install plugins.
 
 
-    -- ]])
+    ]])
 
     print("If this does not help, then here is your error message:\n\n");
     print(err .. "\n\n");
