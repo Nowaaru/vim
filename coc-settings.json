@@ -22,11 +22,4 @@
   },
   "sumneko-lua.enableNvimLuaDev": true,
   "Lua.diagnostics.globals": ["vim"],
-  "languageserver": {
-    "lua": {
-        "command": "lua-language-server",
-        "filetypes": [".lua"],
-        "rootPatterns": [".git"]
-    }
-  }
 }

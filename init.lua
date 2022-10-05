@@ -9,25 +9,25 @@ local initCoc    = dir_config .. "/coc.vim";
 math.randomseed(os.time())
 
 -- General QOL Vim things [set]
-vim.o.tabstop        = 8;
-vim.o.shiftwidth     = 4;
-vim.o.softtabstop    = 4;
-vim.o.splitright     = true;
-vim.o.splitbelow     = true;
-vim.o.expandtab      = true;
-vim.o.fileformat     = "unix";
-vim.o.clipboard      = "unnamed";
-vim.o.mouse          = "a";
+vim.o.tabstop     = 8;
+vim.o.shiftwidth  = 4;
+vim.o.softtabstop = 4;
+vim.o.splitright  = true;
+vim.o.splitbelow  = true;
+vim.o.expandtab   = true;
+vim.o.fileformat  = "unix";
+vim.o.clipboard   = "unnamed";
+vim.o.mouse       = "a";
 
 -- General QOL Vim things [let]
-vim.g.mapleader   = " ";
+vim.g.mapleader = " ";
 
 -- COC Compatibility
-vim.o.updatetime  = 100;
-vim.o.signcolumn  = "yes";
+vim.o.updatetime = 100;
+vim.o.signcolumn = "yes";
 
 -- Timeout length
-vim.o.timeoutlen  = 250
+vim.o.timeoutlen = 250
 
 require('packer').startup(function(Plug)
     do
@@ -36,8 +36,9 @@ require('packer').startup(function(Plug)
         do -- Neotree
             Plug('nvim-lua/plenary.nvim');
 
-            Plug('kyazdani42/nvim-web-devicons', {
-                ["do"] = function()
+            Plug({
+                'kyazdani42/nvim-web-devicons',
+                config = function()
                     require('nvim-web-devicons').setup({
                         default = true
                     });
@@ -46,11 +47,12 @@ require('packer').startup(function(Plug)
 
             Plug('MunifTanjim/nui.nvim');
 
-            Plug('nvim-neo-tree/neo-tree.nvim', {
+            Plug({
+                'nvim-neo-tree/neo-tree.nvim',
                 branch = 'v2.x',
                 config = function()
                     require("neo-tree").setup({
-                        close_if_last_window = false,
+                        close_if_last_window = true,
                         filesystem = {
                             hijack_netrw_behavior = "open_default",
                             follow_current_file = true,
@@ -61,15 +63,16 @@ require('packer').startup(function(Plug)
         end
 
         do -- Treesitter
-            local treesitterRequires = { requires = { 'nvim-treesitter/nvim-treesitter' } };
-            Plug('nvim-treesitter/nvim-treesitter', {
+            local treesitterId = "nvim-treesitter/nvim-treesitter";
+            Plug({
+                treesitterId,
                 ["do"] = ":TSUpdate"
             });
 
-            Plug("windwp/nvim-ts-autotag", treesitterRequires);
-            Plug("ZhiyuanLck/smart-pairs", treesitterRequires);
-            Plug("JoosepAlviste/nvim-ts-context-commentstring", treesitterRequires);
-            Plug("ethanholz/nvim-lastplace", treesitterRequires);
+            Plug({ "windwp/nvim-ts-autotag", requires = { treesitterId } });
+            Plug({ "ZhiyuanLck/smart-pairs", requires = { treesitterId } });
+            Plug({ "JoosepAlviste/nvim-ts-context-commentstring", requires = { treesitterId } });
+            Plug({ "ethanholz/nvim-lastplace", requires = { treesitterId } });
         end
 
         do -- WakaTime
