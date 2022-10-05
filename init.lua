@@ -352,7 +352,7 @@ local succ, err = pcall(function()
                     vim.cmd("DashboardNewFile");
                     vim.cmd("e " .. initLua);
                 end,
-                shortcut = 'SPC n o'
+                shortcut = 'SPC n c'
             }
         }
 
