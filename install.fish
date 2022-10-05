@@ -32,16 +32,6 @@ if command -qs git
         read -P "Please close Neovim after plugin installation. Awaiting user confirmation..."
         nvim +PackerInstall
 
-        if command -qs brew
-            echo "$(set_color yellow) Installing Lua language server..."
-            brew install lua-language-server
-        else
-            set_color yellow
-            echo "In order to change the configuration effectively, you'll need to install a Lua language server."
-            echo "If you want the installer to handle this, please install Homebrew (Linuxbrew)."
-            set_color normal
-        end
-
         if command -qs yarn
             echo "$(set_color green) Yarn is installed. Setting up CoC... $(set_color normal)"
             cd ~/.local/share/nvim/site/pack/packer/start/coc.nvim

@@ -110,7 +110,7 @@ require('packer').startup(function(Plug)
         do -- Autocomplete
             Plug("neoclide/coc.nvim", {
                 branch = "release",
-                run = ":CocInstall coc-prettier coc-clangd coc-json coc-html coc-java coc-css coc-tsserver"
+                run = ":CocInstall coc-prettier coc-clangd coc-json coc-html coc-java coc-css coc-tsserver coc-sumneko-lua"
             });
         end
 
