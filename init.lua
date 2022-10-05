@@ -9,14 +9,15 @@ local initCoc    = dir_config .. "/coc.vim";
 math.randomseed(os.time())
 
 -- General QOL Vim things [set]
-vim.o.tabstop     = 8;
-vim.o.shiftwidth  = 4;
-vim.o.softtabstop = 4;
-vim.o.splitright  = true;
-vim.o.splitbelow  = true;
-vim.o.expandtab   = true;
-vim.o.clipboard   = "unnamed";
-vim.o.mouse       = "a";
+vim.o.tabstop        = 8;
+vim.o.shiftwidth     = 4;
+vim.o.softtabstop    = 4;
+vim.o.splitright     = true;
+vim.o.splitbelow     = true;
+vim.o.expandtab      = true;
+vim.o.fileformat     = "unix";
+vim.o.clipboard      = "unnamed";
+vim.o.mouse          = "a";
 
 -- General QOL Vim things [let]
 vim.g.mapleader   = " ";
@@ -447,14 +448,14 @@ local succ, err = pcall(function()
 end)
 
 if (not succ) then
-    print([[
-An error occured when setting up NVim's plugins.
+    -- print([[
+-- An error occured when setting up NVim's plugins.
 
-This usually is due to PlugInstall not being called.
-Please press <SPC>ni to install plugins.
+-- This usually is due to PlugInstall not being called.
+-- Please press <SPC>ni to install plugins.
 
 
-    ]])
+    -- ]])
 
     print("If this does not help, then here is your error message:\n\n");
     print(err .. "\n\n");

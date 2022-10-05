@@ -1,6 +1,6 @@
 " Some servers have issues with backup files, see #649.
-set nobackup
 set nowritebackup
+set nobackup
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
