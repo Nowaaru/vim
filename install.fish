@@ -24,16 +24,26 @@ if command -qs git
     mkdir -p ~/.local/share/nvim
     mkdir -p ~/.config/nvim
 
-    echo "$(set_color green) Installing NoireVim profile... $(set_color white)"
-    git clone --depth 1 -v https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-    git clone https://github.com/Nowaaru/vim.git -v ~/.config/nvim
-
-    read -P "Please close Neovim after plugin installation. Awaiting user confirmation..." _
-    nvim +PackerInstall
-
     if command -qs npm
+        echo "$(set_color green) Installing NoireVim profile... $(set_color normal)"
+        git clone --depth 1 -v https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+        git clone https://github.com/Nowaaru/vim.git -v ~/.config/nvim
+
+        read -P "Please close Neovim after plugin installation. Awaiting user confirmation..."
+        nvim +PackerInstall
+
+        if command -qs brew
+            echo "$(set_color yellow) Installing Lua language server..."
+            brew install lua-language-server
+        else
+            set_color yellow
+            echo "In order to change the configuration effectively, you'll need to install a Lua language server."
+            echo "If you want the installer to handle this, please install Homebrew (Linuxbrew).
+            set color normal
+        end
+
         if command -qs yarn
-            echo "$(set_color green) Yarn is installed. Setting up CoC... $(set_color white)"
+            echo "$(set_color green) Yarn is installed. Setting up CoC... $(set_color normal)"
             cd ~/.local/share/nvim/site/pack/packer/start/coc.nvim
             yarn install
 
