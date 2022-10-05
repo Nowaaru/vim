@@ -192,6 +192,10 @@ local succ, err = pcall(function()
         whichKey.register({
             Q = { ":qa!<cr>", "Close Vim", },
             q = { ":q<cr>", "Close Window" },
+            a = {
+                name = "Aesthetics",
+                b = { ":hi Normal guibg=NONE ctermbg=NONE", "Disable Background" }
+            },
             d = {
                 name = "Dashboard",
                 d = { ":Dashboard<cr>", "Open Dashboard" },
