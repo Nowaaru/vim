@@ -39,7 +39,7 @@ if command -qs git
             set_color yellow
             echo "In order to change the configuration effectively, you'll need to install a Lua language server."
             echo "If you want the installer to handle this, please install Homebrew (Linuxbrew).
-            set color normal
+            set_color normal
         end
 
         if command -qs yarn
