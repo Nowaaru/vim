@@ -61,14 +61,15 @@ require('packer').startup(function(Plug)
         end
 
         do -- Treesitter
+            local treesitterRequires = { requires = { 'nvim-treesitter/nvim-treesitter' } };
             Plug('nvim-treesitter/nvim-treesitter', {
                 ["do"] = ":TSUpdate"
             });
 
-            Plug("windwp/nvim-ts-autotag");
-            Plug("ZhiyuanLck/smart-pairs");
-            Plug("JoosepAlviste/nvim-ts-context-commentstring");
-            Plug("ethanholz/nvim-lastplace");
+            Plug("windwp/nvim-ts-autotag", treesitterRequires);
+            Plug("ZhiyuanLck/smart-pairs", treesitterRequires);
+            Plug("JoosepAlviste/nvim-ts-context-commentstring", treesitterRequires);
+            Plug("ethanholz/nvim-lastplace", treesitterRequires);
         end
 
         do -- WakaTime
@@ -106,6 +107,7 @@ require('packer').startup(function(Plug)
         do -- Autocomplete
             Plug("neoclide/coc.nvim", {
                 branch = "release",
+                run = ":CocInstall coc-prettier coc-clangd coc-json coc-html coc-java coc-css coc-tsserver"
             });
         end
 
