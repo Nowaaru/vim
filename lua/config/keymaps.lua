@@ -6,7 +6,7 @@
 
 local nt = { "n", "t" }
 do
-  vim.keymap.del(nt, "t"}, "<C-Up>")
+  vim.keymap.del(nt, "<C-Up>")
   vim.keymap.del(nt, "<C-Down>")
   vim.keymap.del(nt, "<C-Left>")
   vim.keymap.del(nt, "<C-Right>")
