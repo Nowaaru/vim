@@ -1,3 +1,5 @@
+vim.lsp.set_log_level("debug") 
+
 return {
   {
     "williamboman/mason.nvim",
