@@ -8,7 +8,7 @@ return {
   {
     'wakatime/vim-wakatime',
     enabled = true;
-  }
+  };
 
   {
     "echasnovski/mini.surround"
