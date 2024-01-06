@@ -20,9 +20,9 @@ do
   vim.keymap.set({ "n", "t" }, "<C-Left>", "<C-w>h", { desc = "Go to left window", remap = true })
 
   -- Resizing.
-  vim.keymap.set("n", "<C-k>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-  vim.keymap.set("n", "<C-j>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-  vim.keymap.set("n", "<C-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
-  vim.keymap.set("n", "<C-h>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+  vim.keymap.set({"n", "t"}, "<C-k>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+  vim.keymap.set({"n", "t"}, "<C-j>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+  vim.keymap.set({"n", "t"}, "<C-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+  vim.keymap.set({"n", "t"}, "<C-h>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 end
 
