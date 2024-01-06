@@ -4,15 +4,15 @@
 
 -- Swap window size and window change mappings.
 do
-  vim.keymap.del("n", "<C-h>")
-  vim.keymap.del("n", "<C-j>")
-  vim.keymap.del("n", "<C-k>")
-  vim.keymap.del("n", "<C-l>")
+  vim.keymap.del("n", "<C-Up>")
+  vim.keymap.del("n", "<C-Down>")
+  vim.keymap.del("n", "<C-Left>")
+  vim.keymap.del("n", "<C-Right>")
 
-  -- vim.keymap.del("n", "<C-Up>")
-  -- vim.keymap.del("n", "<C-Down>")
-  -- vim.keymap.del("n", "<C-Left>")
-  -- vim.keymap.del("n", "<C-Right>")
+  vim.keymap.del({ "n", "t" }, "<C-h>")
+  vim.keymap.del({ "n", "t" }, "<C-j>")
+  vim.keymap.del({ "n", "t" }, "<C-k>")
+  vim.keymap.del({ "n", "t" }, "<C-l>")
 
   vim.keymap.set("n", "<C-Up>", "<C-w>h", { desc = "Go to left window", remap = true })
   vim.keymap.set("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window", remap = true })
